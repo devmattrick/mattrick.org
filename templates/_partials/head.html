@@ -1,0 +1,30 @@
+{# Determine a title based on context #}
+{% set title = config.title %}
+{% if page.title %}
+    {% set title = page.title ~ " - " ~ config.title %}
+{% elif section.title %}
+    {% set title = section.title ~ " - " ~ config.title %}
+{% endif %}
+
+{# Determine a description based on context #}
+{% set description = config.description %}
+{% if page.title %}
+    {% set description = page.description %}
+{% elif section.title %}
+    {% set description = section.description %}
+{% endif %}
+
+{% block head %}
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}" />
+
+<link rel="stylesheet" href="{{ get_url(path="styles/main.css", cachebust=true) }}">
+
+{# Allow extra content in <head> without replacing entire default head #}
+{% block head_extra %}
+{% endblock head_extra %}
+
+{% endblock head %}

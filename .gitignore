@@ -1,0 +1,8 @@
+# Ignore static/ since everything will be copied over from assets/
+static/
+
+# Built website
+public/
+
+# NPM dependencies
+node_modules/

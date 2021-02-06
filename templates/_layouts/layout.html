@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "_partials/head.html" %}
+</head>
+<body>
+    {% block body %}
+    <main>
+        {% include "_partials/header.html" %}
+
+        {% block content %}
+        {% endblock content %}
+
+        <pre>{{ __tera_context }}</pre>
+
+        {% include "_partials/footer.html" %}
+    </main>
+    {% endblock body %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "include": [
+        "assets/scripts/**/*.ts"
+    ],
+    "compilerOptions": {
+        "outDir": "static/scripts/",
+        "target": "es6"
+    }
+}
