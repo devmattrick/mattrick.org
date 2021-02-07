@@ -1,0 +1,1 @@
+body{--page-bg:var(--light);--page-fg:var(--dark);background:var(--page-bg);color:var(--page-fg);font-family:sans-serif}@media screen and (prefers-color-scheme:dark){body{--page-bg:var(--dark);--page-fg:var(--light)}}

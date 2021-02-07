@@ -1,0 +1,1 @@
+console.log("eooooo");let o=100;console.log(o);export default"hiaaaa";
