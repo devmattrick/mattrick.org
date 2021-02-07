@@ -13,7 +13,7 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 
 // Task to clean output directory
 function clean() {
-    return src("static/", { read: false })
+    return src("static/", { read: false, allowEmpty: true })
         .pipe(gclean());
 }
 
