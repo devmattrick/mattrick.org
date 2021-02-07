@@ -4,6 +4,7 @@ body {
 
     background: var(--page-bg);
     color: var(--page-fg);
+    font-family: sans-serif;
 }
 
 @media screen and (prefers-color-scheme: dark) {

@@ -1,4 +1,6 @@
+// Define some global CSS variables
 :root {
     --light: #FFFFFF;
     --dark: #000000;
+    --primary: #3742fa;
 }
