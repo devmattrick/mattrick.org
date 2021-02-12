@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://mattrick.org"
+base_url = "http://localhost:8000"
 title = "mattrick"
 description = "Personal website and blog of Matthew McCune"
 

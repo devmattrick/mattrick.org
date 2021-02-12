@@ -3,6 +3,7 @@
         "assets/scripts/**/*.ts"
     ],
     "compilerOptions": {
+        "lib": ["DOM"],
         "outDir": "static/scripts/",
         "target": "es6"
     }

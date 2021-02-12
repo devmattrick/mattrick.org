@@ -1,16 +1,5 @@
 {% macro icon(name) %}
-    {# 
-        Due to a bug in Zola (https://github.com/getzola/zola/issues/1308), we need to inline the SVG icons to make them
-        work properly in dev mode. We also need to reevaluate the development variable since it won't be available in 
-        this macro. This workaround can be removed when Zola is updated.
-    #}
-    {% if get_env(name="NODE_ENV", default="production") == "development" %}
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <use xlink:href="{{"#" ~ name}}"></use>
-        </svg>
-    {% else %}
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <use xlink:href="{{ get_url(path="images/icons.svg") ~ "#" ~ name}}"></use>
-        </svg>
-    {% endif %}
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <use xlink:href="{{ get_url(path="images/icons.svg") ~ "#" ~ name}}"></use>
+    </svg>
 {% endmacro %}

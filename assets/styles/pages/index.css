@@ -30,8 +30,26 @@
 }
 
 .masthead {
-    background: var(--color-dark);
+    --bits-percentage: 100%;
+    --bits-color: var(--color-red);
+    --bits-seed: 42;
+    background: paint(bits) var(--color-dark);
     color: var(--color-dark-inverse);
     padding-top: 5em;
     padding-bottom: calc(5em + 100px);
+    animation: intro 1s ease-in-out forwards;
+}
+
+.masthead__content {
+    display: inline-block;
+    background: var(--color-dark);
+}
+
+@keyframes intro {
+    0% {
+        --bits-percentage: 0%;
+    }
+    100% {
+        --bits-percentage: 100%;
+    }
 }
