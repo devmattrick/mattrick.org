@@ -1,3 +1,8 @@
+{% import "_macros/icon.html" as icon %}
+
+{# Set development mode variable if we're in a development environment #}
+{% set development = get_env(name="NODE_ENV", default="production") == "development" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +10,18 @@
 </head>
 <body>
     {% block body %}
-    <main>
-        {% include "_partials/header.html" %}
+    {% include "_partials/navbar.html" %}
 
-        {% block content %}
-        {% endblock content %}
-
-        <pre>{{ __tera_context }}</pre>
-
-        {% include "_partials/footer.html" %}
+    <main class="main">
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
     </main>
+
+    <div class="decoration"></div>
     {% endblock body %}
+
+    {% include "_partials/debug.html" %}
 </body>
 </html>

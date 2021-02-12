@@ -1,6 +1,20 @@
-// Define some global CSS variables
+// Define global CSS variables
 :root {
-    --light: #FFFFFF;
-    --dark: #000000;
-    --primary: #3742fa;
+    // Colors
+    --color-light: #FFFFFF;
+    --color-light-inverse: var(--color-dark);
+    --color-dark: #111827;
+    --color-dark-inverse: var(--color-light);
+    --color-red: #EF4444;
+    --color-red-inverse: var(--color-light);
+    --color-gray: #9CA3AF;
+    
+    // Fonts
+    --font-primary: 'Montserrat', sans-serif;
+    --font-monospace: monospace;
+
+    font-size: 24px;
+
+    // Containers
+    --container-padding: 3rem;
 }

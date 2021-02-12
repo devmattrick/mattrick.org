@@ -21,7 +21,15 @@
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}" />
 
+{# Load Google Fonts - TODO Replace with self hosted version #}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="{{ get_url(path="styles/main.css", cachebust=true) }}">
+
+{% if development %}
+    {{ load_data(path="static/images/icons.svg") | safe }}
+{% endif %}
 
 {# Allow extra content in <head> without replacing entire default head #}
 {% block head_extra %}

@@ -1,5 +1,5 @@
 # mattrick.org
-Personal website and blog of Matthew McCune.
+Matthew McCune's personal website and blog.
 
 ## Dependencies
 In order to build this website, you'll need Zola. You can view installation instructions for your platform 

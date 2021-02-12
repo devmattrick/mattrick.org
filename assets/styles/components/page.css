@@ -1,15 +1,26 @@
-body {
-    --page-bg: var(--light);
-    --page-fg: var(--dark);
-
-    background: var(--page-bg);
-    color: var(--page-fg);
-    font-family: sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        --page-bg: var(--dark);
-        --page-fg: var(--light);
-    }
+*::before, *::after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--color-light);
+    color: var(--color-light-inverse);
+}
+
+a {
+    color: var(--color-red);
+    text-decoration: none;
+}
+
+img, svg {
+    display: inline-block;
 }

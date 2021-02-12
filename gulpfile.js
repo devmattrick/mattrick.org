@@ -44,7 +44,15 @@ function build_styles() {
 const IMAGES_SRC = "assets/images/**/*.{png,jpe?g,gif,svg,webp}";
 function build_images() {
     return src(IMAGES_SRC)
-        .pipe(gulpif(PRODUCTION, imagemin()))
+        .pipe(gulpif(PRODUCTION, imagemin([
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {cleanupIDs: false}
+                ]
+            })
+        ])))
         .pipe(dest("static/images/"));
 }
 

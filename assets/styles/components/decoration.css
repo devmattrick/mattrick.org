@@ -1,0 +1,10 @@
+.decoration {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: var(--container-padding);
+    width: 2px;
+    height: 100vh;
+    background: var(--color-gray);
+    opacity: 0.1;
+}
