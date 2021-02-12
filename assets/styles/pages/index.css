@@ -7,7 +7,7 @@
     top: 40px;
     right: var(--container-padding);
     transform: rotate(-90deg);
-    font-size: 10vw;
+    font-size: calc(2rem + 8vw);
     font-family: var(--font-monospace);
     color: var(--color-gray);
     opacity: 0.1;
