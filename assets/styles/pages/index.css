@@ -4,7 +4,7 @@
 
 .section__label {
     position: absolute;
-    top: 40px;
+    top: 100px;
     right: var(--container-padding);
     transform: rotate(-90deg);
     font-size: calc(2rem + 8vw);

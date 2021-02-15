@@ -25,7 +25,7 @@ class GridPainter {
         ctx.beginPath();
 
         {
-            const lineCount = Math.round(geom.width / size);
+            const lineCount = Math.round(geom.width / size) + 1;
             const step = 1 / lineCount;
             let line = 0;
             for (let pos = 0; pos < geom.width; pos += size) {
@@ -36,7 +36,7 @@ class GridPainter {
         }
 
         {
-            const lineCount = Math.round(geom.height / size);
+            const lineCount = Math.round(geom.height / size) + 1;
             const step = 1 / lineCount;
             let line = 1;
             for (let pos = 0; pos < geom.height; pos += size) {
