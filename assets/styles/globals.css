@@ -7,6 +7,8 @@
     --color-dark-inverse: var(--color-light);
     --color-red: #EF4444;
     --color-red-inverse: var(--color-light);
+    --color-green: #6EE7B7;
+    --color-green-inverse: var(--color-dark);
     --color-gray: #9CA3AF;
     
     // Fonts

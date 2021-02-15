@@ -1,8 +1,10 @@
 {
     "include": [
-        "assets/scripts/**/*.ts"
+        "assets/scripts/"
     ],
     "compilerOptions": {
+        "isolatedModules": true,
+        "module": "ES2020",
         "lib": ["DOM"],
         "outDir": "static/scripts/",
         "target": "es6"

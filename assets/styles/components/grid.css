@@ -1,0 +1,17 @@
+@property --grid-percent {
+    syntax: "<percentage>";
+    initial-value: 100%;
+    inherits: true;
+}
+
+@property --grid-size {
+    syntax: '<number>';
+    initial-value: 50;
+    inherits: true;
+}
+
+@property --grid-color {
+    syntax: '<color>';
+    initial-value: var(--color-red);
+    inherits: true;
+}

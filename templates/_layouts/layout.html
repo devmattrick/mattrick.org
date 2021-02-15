@@ -24,9 +24,8 @@
 
     {% include "_partials/debug.html" %}
 
-    <script>
-        console.log("test!");
-        CSS.paintWorklet.addModule("scripts/bits.js");
+    <script type="module">
+        CSS.paintWorklet.addModule("scripts/grid.js");
     </script>
 </body>
 </html>

@@ -89,6 +89,27 @@ class Line extends Shape {
     }
 }
 
+class Arrow extends Shape {
+    private readonly MAX_SIZE = 15;
+    private readonly MAX_OFFSET = 20;
+    private direction: number;
+
+    constructor(x: number, y: number, rand: () => number) {
+        super(x, y, rand);
+        this.direction = rand() > 0.5 ? -1 : 1;
+    }
+
+    draw(ctx: CanvasRenderingContext2D, p: number) {
+        const size = lerp(0, this.MAX_SIZE, p);
+        const offset = lerp(this.MAX_OFFSET, 0, p) * this.direction;
+
+        let x = this.x - (size / 2) + offset;
+        let y = this.y - 5;
+
+        ctx.fillRect(x, y, size, 10);
+    }
+}
+
 
 class BitsPainter {
     static get inputProperties() {
@@ -102,11 +123,13 @@ class BitsPainter {
 
         const shapes = new Array<Shape>();
 
-        for (let x = 0; x < geom.width; x += 80) {
+        for (let x = 0; x < geom.width; x += 100) {
             for (let y = 20; y < geom.height; y += 105) {
                 const r = rand();
 
-                if (r < 0.2) {
+                if (r < 0.05) {
+                    shapes.push(new Arrow(x, y, rand));
+                } else if (r < 0.2) {
                     shapes.push(new Dot(x, y, rand));
                 } else if (r < 0.3) {
                     shapes.push(new Line(x, y, rand));
@@ -119,7 +142,5 @@ class BitsPainter {
         shapes.forEach((shape) => shape.draw(ctx, percent));
     }
 }
-
-console.log("Test!");
 
 registerPaint("bits", BitsPainter);
