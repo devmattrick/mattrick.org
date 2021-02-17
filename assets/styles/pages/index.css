@@ -32,7 +32,7 @@
     color: var(--color-dark-inverse);
     padding: max(7.5%, calc(5em + 100px)) 0;
     margin-top: -100px;
-    animation: masthead-grid 3s linear forwards;
+    animation: masthead-grid 10s linear infinite;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 
     @media (prefers-reduced-motion: reduce) {

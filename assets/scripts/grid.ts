@@ -24,33 +24,45 @@ class GridPainter {
 
         ctx.beginPath();
 
-        {
-            const lineCount = Math.round(geom.width / size) + 1;
-            let line = 0;
-            for (let pos = 0; pos < geom.width; pos += size) {
-                const height = range((line - 5) / lineCount, line / lineCount, 0, geom.height, percent);
-                verticalLine(ctx, pos, 0, height);
-                line++;
-            }
-        }
-
-        {
-            const lineCount = Math.round(geom.height / size) + 1;
-            let line = 1;
-            for (let pos = 0; pos < geom.height; pos += size) {
-                const width = range((line - 5) / lineCount, line / lineCount, 0, geom.width, percent);
-                horizontalLine(ctx, pos, 0, width);
-                line++;
-            }
-        }
+        drawVerticalLines(ctx, percent, size, geom.width, geom.height);
+        drawHorizontalLines(ctx, percent, size, geom.width, geom.height);
 
         ctx.stroke();
     }
 }
 
+function drawVerticalLines(ctx: CanvasRenderingContext2D, percent: number, size: number, width: number, height: number) {
+    const lineCount = Math.ceil(width / size);
+    for (let line = 0; line < lineCount; line++) {
+        const divisor = lineCount + 5;
+        const min = line / divisor;
+        const max = (line + 5) / divisor;
+
+        const y1 = range(min, max, 0, height, (percent - 0.5) * 2);
+        const y2 = range(min, max, 0, height, percent * 2);
+
+        verticalLine(ctx, line * size, y1, y2);
+    }
+}
+
+
 function verticalLine(ctx: CanvasRenderingContext2D, x: number, y1: number, y2: number) {
     ctx.moveTo(x, y1);
     ctx.lineTo(x, y2);
+}
+
+function drawHorizontalLines(ctx: CanvasRenderingContext2D, percent: number, size: number, width: number, height: number) {
+    const lineCount = Math.round(height / size) + 1;
+    for (let line = 0; line < lineCount; line++) {
+        const divisor = lineCount + 5;
+        const min = line / divisor;
+        const max = (line + 5) / divisor;
+
+        const x1 = range(min, max, 0, width, (percent - 0.5) * 2);
+        const x2 = range(min, max, 0, width, percent * 2);
+
+        horizontalLine(ctx, line * size, x1, x2);
+    }
 }
 
 function horizontalLine(ctx: CanvasRenderingContext2D, y: number, x1: number, x2: number) {
