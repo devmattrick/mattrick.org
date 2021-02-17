@@ -10,7 +10,7 @@ html, body {
     height: 100%;
 }
 
-body {
+body {    
     font-family: var(--font-primary);
     background: var(--color-light);
     color: var(--color-light-inverse);
@@ -23,4 +23,9 @@ a {
 
 img, svg {
     display: inline-block;
+}
+
+::selection {
+    color: var(--color-red-inverse);
+    background: var(--color-red);
 }

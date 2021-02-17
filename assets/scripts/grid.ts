@@ -26,10 +26,9 @@ class GridPainter {
 
         {
             const lineCount = Math.round(geom.width / size) + 1;
-            const step = 1 / lineCount;
             let line = 0;
             for (let pos = 0; pos < geom.width; pos += size) {
-                const height = range((line - 1) * step, line * step, 0, geom.height, percent);
+                const height = range((line - 5) / lineCount, line / lineCount, 0, geom.height, percent);
                 verticalLine(ctx, pos, 0, height);
                 line++;
             }
@@ -37,10 +36,9 @@ class GridPainter {
 
         {
             const lineCount = Math.round(geom.height / size) + 1;
-            const step = 1 / lineCount;
             let line = 1;
             for (let pos = 0; pos < geom.height; pos += size) {
-                const width = range((line - 1) * step, line * step, 0, geom.width, percent);
+                const width = range((line - 5) / lineCount, line / lineCount, 0, geom.width, percent);
                 horizontalLine(ctx, pos, 0, width);
                 line++;
             }
