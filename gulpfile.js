@@ -49,7 +49,12 @@ function build_images() {
             imagemin.optipng({optimizationLevel: 5}),
             imagemin.svgo({
                 plugins: [
-                    {cleanupIDs: false}
+                    {cleanupIDs: false},
+                    {
+                        removeHiddenElems: {
+                            displayNone: false
+                        }
+                    }
                 ]
             })
         ])))
