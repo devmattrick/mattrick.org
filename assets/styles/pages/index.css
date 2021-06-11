@@ -28,7 +28,8 @@
     --grid-percentage: 100%;
     --grid-color: rgba(255, 255, 255, 0.05);
     --grid-size: 50;
-    background: paint(grid) var(--color-dark);
+    background: var(--color-dark);
+    background: paint(grid);
     color: var(--color-dark-inverse);
     padding: max(7.5%, calc(5em + 100px)) 0;
     margin-top: -100px;
