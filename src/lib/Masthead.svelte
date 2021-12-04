@@ -22,16 +22,10 @@
 <style>
   .masthead {
     margin-top: -100px;
-    padding: 0 5em;
+    padding-top: 100px;
     height: 100vh;
     display: flex;
     align-items: center;
-  }
-
-  @media (max-width: 810px) {
-    .masthead {
-      padding: 0;
-    }
   }
 
   .greet {

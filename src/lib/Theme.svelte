@@ -59,4 +59,9 @@
   .theme :global(a) {
     color: var(--color-brand);
   }
+
+  .theme :global(::selection) {
+    background: var(--color-brand);
+    color: var(--color-brand-text);
+  }
 </style>

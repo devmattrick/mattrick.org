@@ -5,10 +5,10 @@
 
 <header class="navbar">
   <Container>
-    <div class="brand">
+    <a class="brand" href="/">
       <Logo />
       <h1>Matt McCune</h1>
-    </div>
+    </a>
   </Container>
 </header>
 
@@ -17,12 +17,17 @@
     height: 100px;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 5;
   }
 
   .brand {
     display: flex;
     align-items: center;
     font-size: 2em;
+    color: var(--color-background-text);
+    text-decoration: none;
+    margin-left: -18px;
   }
 
   .brand h1 {
