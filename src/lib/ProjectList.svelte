@@ -9,6 +9,12 @@
       image: "/tabletop.png",
       link: "https://github.com/cpsc362-team6",
     },
+    {
+      name: "Monitoring Dashboard",
+      description: "An online EC2 instance monitoring dashbaord using AWS.",
+      image: "/monitoring.png",
+      link: "https://github.com/cpsc454-team7",
+    },
   ];
 </script>
 
@@ -16,12 +22,14 @@
   <h1 class="heading">Here's some stuff I've worked on...</h1>
   <div class="list">
     {#each projects as project}
-      <Project
-        name={project.name}
-        description={project.description}
-        image={project.image}
-        link={project.link}
-      />
+      <div class="item">
+        <Project
+          name={project.name}
+          description={project.description}
+          image={project.image}
+          link={project.link}
+        />
+      </div>
     {/each}
   </div>
 </Container>
@@ -35,5 +43,9 @@
 
   .list {
     padding: 0 5em;
+  }
+
+  .item {
+    margin: 5em 0;
   }
 </style>
