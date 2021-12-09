@@ -11,7 +11,7 @@
     },
     {
       name: "Monitoring Dashboard",
-      description: "An online EC2 instance monitoring dashbaord using AWS.",
+      description: "An online EC2 instance monitoring dashboard using AWS.",
       image: "/monitoring.png",
       link: "https://github.com/cpsc454-team7",
     },
