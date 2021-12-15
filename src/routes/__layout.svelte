@@ -27,7 +27,7 @@
 
   @media (max-width: 500px) {
     :global(:root) {
-      font-size: 0.75rem;
+      font-size: 0.5rem;
     }
   }
 
