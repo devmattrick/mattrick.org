@@ -1,0 +1,57 @@
+---
+import "@fontsource/montserrat/variable.css";
+
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const effectiveTitle = title ? `mattrick.org - ${title}` : "mattrick.org";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{effectiveTitle}</title>
+  </head>
+  <body>
+    <Navbar />
+
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-foreground: #ffffff;
+    --color-background: #0c0a09;
+    --color-primary: #6ee7b7;
+    --color-secondary: #fb7185;
+
+    --font-sans: "MontserratVariable", sans-serif;
+    --font-serif: serif;
+    --font-mono: monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+</style>

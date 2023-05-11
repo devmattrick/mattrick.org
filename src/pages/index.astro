@@ -1,13 +1,10 @@
 ---
+import Masthead from "../components/Masthead.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+<BaseLayout>
+  <Masthead>
+    <h2>Hi there, I'm Matt</h2>
+  </Masthead>
+</BaseLayout>
