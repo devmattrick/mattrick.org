@@ -1,10 +1,84 @@
 ---
-import Masthead from "../components/Masthead.astro";
+import { Image } from "astro:assets";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import RecentPosts from "../components/RecentPosts.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+
+import portraitImage from "../assets/portrait.jpg";
 ---
 
 <BaseLayout>
-  <Masthead>
-    <h2>Hi there, I'm Matt</h2>
-  </Masthead>
+  <Container>
+    <div class="wrapper">
+      <main>
+        <SectionHeading>Recent Posts</SectionHeading>
+        <RecentPosts />
+      </main>
+      <aside>
+        <SectionHeading>About Me</SectionHeading>
+        <Image
+          src={portraitImage}
+          alt="A portrait of Matt's face."
+          class="portrait"
+          width="100"
+        />
+        <p>
+          Hi there! I'm Matt. I currently work as a Software Engineer at <a
+            href="https://copia.io"
+            rel="noreferrer nofollow">Copia Automation</a
+          >. I'm most experienced with full stack web development &mdash; Go,
+          TypeScript, React, Svelte, Postgres, Docker, and more.
+        </p>
+        <p>You can get in touch with me using the links below.</p>
+        <ul>
+          <li>
+            <a href="https://github.com/devmattrick" rel="me">GitHub</a>
+          </li>
+          <li>
+            <a href="https://mastodon.social/@mattrick" rel="me">Mastodon</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/matthewmccune/" rel="me"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a href="mailto:matt@mattrick.org">Email</a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </Container>
 </BaseLayout>
+
+<style>
+  .wrapper {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "sidebar";
+
+    @media (min-width: 1000px) {
+      grid-template-columns: 3fr minmax(300px, 1fr);
+      grid-template-areas: "main sidebar";
+    }
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  aside {
+    grid-area: sidebar;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 5px;
+  }
+</style>

@@ -9,9 +9,18 @@
     letter-spacing: -0.05em;
     color: var(--color-foreground);
     text-decoration: none;
+
+    &:hover {
+      .accent {
+        transform: translateX(-5px);
+      }
+    }
   }
 
   .accent {
     color: var(--color-primary);
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+    display: inline-block;
   }
 </style>

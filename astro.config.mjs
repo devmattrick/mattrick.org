@@ -6,4 +6,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://mattrick.org",
   integrations: [sitemap()],
+  experimental: {
+    assets: true,
+  },
 });

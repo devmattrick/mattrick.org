@@ -1,0 +1,13 @@
+---
+import { formatDistanceToNowStrict } from "date-fns";
+
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+
+const distance = formatDistanceToNowStrict(date, { addSuffix: true });
+---
+
+<time datetime={date.toISOString()} title={date.toString()}>{distance}</time>
