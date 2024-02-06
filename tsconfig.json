@@ -1,7 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strictest",
-  "compilerOptions": {
-    "verbatimModuleSyntax": true,
-    "importsNotUsedAsValues": "remove"
-  }
+  "extends": "astro/tsconfigs/strictest"
 }
